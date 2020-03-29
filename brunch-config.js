@@ -135,7 +135,7 @@ exports.server = {
 
 // FIXME, document this
 exports.paths = {
-  watched: ['app/js', 'app/css', 'app/assets' ]
+  watched: ['app/js', 'app/assets', 'app/css' ]
 };
 
 // https://brunch.io/docs/troubleshooting
