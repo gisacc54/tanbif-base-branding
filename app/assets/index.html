@@ -182,7 +182,7 @@
      ng-class="{'mobileMenu--active': nav.mobileMenuActive, 'mainMenu--firstLevelActive': nav.activeMenu, hasOffset: nav.scrollOffset > 0}"
      ng-controller="navCtrl as nav">
     <div class="stickyNav__container">
-        <a ng-href="" id="block-logo" class="gbif-logo">
+        <a href="https://tanbif.ditnet.ac.tz" id="block-logo" class="gbif-logo">
             <svg viewBox="90 239.1 539.7 523.9" xmlns="http://www.w3.org/2000/svg">
                 <path class="gbif-logo-svg"
                       d="M325.5,495.4c0-89.7,43.8-167.4,174.2-167.4C499.6,417.9,440.5,495.4,325.5,495.4"/>
@@ -214,44 +214,60 @@
                 <ul>
                     
                         
-                            <li class="mainMenu--hasChild mainMenu__firstLevel "
+                            <li class="mainMenu--hasChild mainMenu__firstLevel mainMenu--hasGrandChild >"
                                 ng-class="{'mainMenu--childActive': nav.activeMenu == 'Get data'}"
                                 >
                                 <a class=" mainMenu__parentItem" href=""
-                                   ng-click="nav.toggleMenu('Get data')" dir="auto">Get data</a>
+                                   ng-click="nav.toggleMenu('Get data')" dir="auto">Our Service</a>
                                    
+                                <!-- <a class=" mainMenu__parentItem" href=""
+                                   ng-click="nav.toggleMenu('How-to')" dir="auto">How-to</a> -->
                                 <ul class="mainMenu__childGroup">
-                                    <li class="mainMenu__columns">
-                                        <nav><h2></h2>
-                                            <ul class="mainMenu__childItem">
-                                                
+                                        <li class="mainMenu__columns" >
+                                            <nav><h2 dir="auto">Species</h2>
+                                                <ul class="mainMenu__childItem">
                                                     <li >
-                                                        <a dir="auto" href="/occurrence/search">Occurrences
-                                                            
-                                                        </a>
+                                                        <a data-i18n="nav.species" class="mdl-navigation__link" href="https://species.tanbif.ditnet.ac.tz">Species</a>
                                                     </li>
-                                                
+                                                   <li>
+                                                       <a data-i18n="nav.species-lists" class="mdl-navigation__link" href="https://lists.tanbif.ditnet.ac.tz">Species Lists</a>
+                                                   </li>
+                                                   <li>
+                                                       <a data-i18n="nav.spatial" class="mdl-navigation__link" href="https://spatial.tanbif.ditnet.ac.tz">Spatial Portal</a>
+                                                   </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                        <li class="mainMenu__columns" >
+                                            <nav><h2 dir="auto">Collections</h2>
+                                                <ul class="mainMenu__childItem">
                                                     <li >
-                                                        <a dir="auto" href="/species/search">Species
-                                                            
-                                                        </a>
+                                                        <a data-i18n="nav.collectory" class="mdl-navigation__link" href="https://collections.tanbif.ditnet.ac.tz">Collections</a>
                                                     </li>
-                                                
                                                     <li >
-                                                        <a dir="auto" href="/dataset/search">Datasets
-                                                            
-                                                        </a>
+                                                        <a data-i18n="nav.datasets" class="mdl-navigation__link" href="https://collections.tanbif.ditnet.ac.tz/datasets">Datasets</a>
                                                     </li>
-                                                
                                                     <li >
-                                                        <a dir="auto" href="/analytics/global">Trends
-                                                            
-                                                        </a>
+                                                        <a data-i18n="nav.regions" class="mdl-navigation__link" href="https://regions.tanbif.ditnet.ac.tz">Regions</a>
                                                     </li>
-                                                
-                                            </ul>
-                                        </nav>
-                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                        <li class="mainMenu__columns" >
+                                            <nav><h2 dir="auto">Other </h2>
+                                                <ul class="mainMenu__childItem">
+                                                    <li>
+                                                        <a data-i18n="nav.biocache" class="mdl-navigation__link" href="https://tanbif.ditnet.ac.tz">Occurrences</a>
+                                                    </li>
+                                                    <li >
+                                                        <a data-i18n="nav.images" class="mdl-navigation__link" href="https://images.tanbif.ditnet.ac.tz">Images</a>
+                                                    </li>
+                                                    <li >
+                                                        <a  class="mdl-navigation__link" href="#">IPT</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
                                 </ul>
                             </li>
                         
@@ -774,7 +790,7 @@
                         </div>
                     </div>
                     <div class="img_caption">
-                        <a href="/occurrence/2576272359">Herd of impalas (<i>Aepyceros melampus</i>)</a> observed in Nyagatare, Rwanda by jordivanoort. Photo via iNaturalist (<a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>)
+                        <!-- <a href="/occurrence/2576272359">Herd of impalas (<i>Aepyceros melampus</i>)</a> observed in Nyagatare, Rwanda by jordivanoort. Photo via iNaturalist (<a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>) -->
                     </div>
                 </div>
             </div>
@@ -786,25 +802,29 @@
                     <article class="article-box article-box--stats">
                         <a ng-href="{{ portal.urlPrefix }}/occurrence/search" class="inherit noUnderline">
                             <h3 class="discreet">Occurrence records</h3>
-                            <div count="//api.gbif.org/v1/occurrence/search">1.000,000,000</div>
+                            <div>0</div>
+                            <!-- <div count="//api.gbif.org/v1/occurrence/search">1.000,000,000</div> -->
                         </a>
                     </article>
                     <article class="article-box article-box--stats">
                         <a ng-href="{{ portal.urlPrefix }}/dataset/search" class="inherit noUnderline">
                             <h3 class="discreet">Datasets</h3>
-                            <div count="//api.gbif.org/v1/dataset/search">40,000</div>
+                            <div>0</div>
+                            <!-- <div count="//api.gbif.org/v1/dataset/search2">40,000</div> -->
                         </a>
                     </article>
                     <article class="article-box article-box--stats">
                         <a ng-href="{{ portal.urlPrefix }}/publisher/search" class="inherit noUnderline">
-                            <h3 class="discreet">Publishing institutions</h3>
-                            <div count="//api.gbif.org/v1/organization" subtract="//api.gbif.org/v1/organization/nonPublishing">1,300</div>
+                            <h3 class="discreet">Publishing Institutions</h3>
+                            <div>0</div>
+                            <!-- <div count="//api.gbif.org/v1/organization" subtract="//api.gbif.org/v1/organization/nonPublishing">1,300</div> -->
                         </a>
                     </article>
                     <article class="article-box article-box--stats">
                         <a ng-href="{{ portal.urlPrefix }}/resource/search?contentType=literature&literatureType=journal&relevance=TANBIF_USED&peerReview=true" class="inherit noUnderline">
-                            <h3 class="discreet">Peer-reviewed papers using data</h3>
-                            <div count="//api.gbif.org/v1/organization">3,450</div>
+                            <h3 class="discreet">Collections</h3>
+                            <div>0</div>
+                            <!-- <div count="//api.gbif.org/v1/organization">3,450</div> -->
                         </a>
                     </article>
                 </div>
@@ -1034,23 +1054,19 @@
             <div class="container--normal">
                 <nav class="site-footer__menu">
                     <div>
-                        <a href="/what-is-gbif">What is TANBIF?</a>
-                        <a href="/developer/summary">API</a>
-                        <a href="/faq">FAQ</a>
-                        <a href="/newsletters">Newsletter</a>
-                        <a href="/terms/privacy-policy">Privacy</a>
-                        <a href="/terms">Terms and agreements</a>
-                        <a href="/citation-guidelines">Citation</a>
-                        <a href="/code-of-conduct">Code of Conduct</a>
-                        <a href="/acknowledgements">Acknowledgements</a>
+                        <a href="#">What is TANBIF?</a>
+                        <a href="#">API</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Newsletter</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms and agreements</a>
+                        <a href="#">Citation</a>
+                        <a href="#">Code of Conduct</a>
+                        <a href="#">Acknowledgements</a>
                     </div>
                     <div>
-                        <a href="/contact-us">Contact</a>
-                        <span>
-                            <span href=""><span>TANBIF Secretariat </span>Universitetsparken 15</span>
-                            <span href="">DK-2100 Copenhagen Ø</span>
-                            <span href="">Denmark</span>
-                        </span>
+                        <a href="#">Contact Us</a>
+                        
                     </div>
                 </nav>
             </div>
