@@ -1,74 +1,68 @@
-<!-- Footer -->
-<!-- TODO: Add sticky footer for small contents -->
+<footer class="site-footer wrapper-horizontal-stripes">
+        <div class="horizontal-stripe light-background site-footer__upper">
+            <div class="container--normal">
+                <nav class="site-footer__menu">
+                    <div>
+                        <a href="#">What is TANBIF?</a>
+                        <a href="#">API</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Newsletter</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms and agreements</a>
+                        <a href="#">Citation</a>
+                        <a href="#">Code of Conduct</a>
+                        <a href="#">Acknowledgements</a>
+                    </div>
+                    <div>
+                        <a href="#">Contact Us</a>
+                        
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="horizontal-stripe site-footer__lower">
+            <div class="container--normal text-center">
+                <img src="https://tanbif.ditnet.ac.tz/resources/full_logo_white.svg">
+                <div class="site-footer__social">
+                    <a href="https://www.facebook.com/gbifnews" class="btn btn-lg btn-circle"><i class="gb-icon-facebook"></i></a>
+                    <a href="https://twitter.com/TANBIF" class="btn btn-lg btn-circle"><i class="gb-icon-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/global-biodiversity-information-facility" class="btn btn-lg btn-circle"><i class="gb-icon-linkedin"></i></a>
+                    <a href="https://www.youtube.com/user/TANBIFvideo" class="btn btn-lg btn-circle"><i class="gb-icon-youtube"></i></a>
+                    <a href="https://vimeo.com/gbif" class="btn btn-lg btn-circle"><i class="gb-icon-vimeo"></i></a>
+                    <a href="https://www.instagram.com/gbifs/" class="btn btn-lg btn-circle"><i class="gb-icon-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    
+
+    
+    <div terms></div>
+    <div gdpr></div>
 </div>
-<div class="la-footer-content">
+<div gb-help-overlay></div>
 
-<footer class="la-footer mdl-mega-footer">
-  <div class="mdl-mega-footer--top-section">
-    <div class="mdl-mega-footer--left-section">
-      <button title="twitter" class="mdl-mega-footer--social-btn">1</button>
-      &nbsp;
-      <button title="flickr" class="mdl-mega-footer--social-btn">2</button>
-      &nbsp;
-      <button title="Facebook" class="mdl-mega-footer--social-btn">3</button>
-    </div>
-    <div class="mdl-mega-footer--right-section">
-      <a class="mdl-typography--font-light" href="#top">
-        Back to Top
-        <i class="material-icons">expand_less</i>
-      </a>
-    </div>
-  </div>
-
-  <div class="mdl-mega-footer--middle-section">
-    <div class="mdl-mega-footer--right-section">
-      <img src="::headerFooterServer::/images/dit.png" title="Dar es Salaam Institute of Technology" alt="DIT">&nbsp;&nbsp;
-      <img src="::headerFooterServer::/images/costech.jpg" title="COSTECH" alt="COSTECH">&nbsp;&nbsp;
-      <img src="::headerFooterServer::/images/jrs.png" title="JRS" alt="JRS">
-    </div>
-    <p class="mdl-typography--font-light">Licence: </p>
-    <p class="mdl-typography--font-light" data-i18n="general.copyright" ></p>
-  </div>
-
-  <div class="mdl-mega-footer--bottom-section">
-    <a class="la-link la-link-menu mdl-typography--font-light" id="version-dropdown">
-      Language
-      <i class="material-icons">arrow_drop_up</i>
+<script type="text/ng-template" id="dropdown.html">
+  <a href="" dir="auto">
+        <span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
     </a>
-    <ul class="locale-switcher mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
-      <li class="locale-link mdl-menu__item" data-locale="en"><a class="en-locale-link" href=""><span class="lang_link_en">English</span></a></li>
-      <li class="locale-link mdl-menu__item" data-locale="sw"><a class="sw-locale-link" href=""><span class="lang_link_es">Swahili</span></a></li>
-    </ul>
-    <a class="la-link la-link-menu mdl-typography--font-light" id="developers-dropdown">
-      Start Exploring
-      <i class="material-icons">arrow_drop_up</i>
-    </a>
-    <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
-      <li class="mdl-menu__item"><a class="mdl-menu__item la-link" href="https://records.tanbif.ditnet.ac.tz/explore/your-area">Explore your area</a></li>
-      <li class="mdl-menu__item"><a href="https://regions.tanbif.ditnet.ac.tz">Explore Regions</a></li>
-      <li class="mdl-menu__item"><a href="https://records.tanbif.ditnet.ac.tz/search">Search Occurrence Records</a></li>
-    </ul>
-    <a class="la-link mdl-typography--font-light" href="">Blog</a>
-    <a class="la-link mdl-typography--font-light" href="">Privacy Policy</a>
-  </div>
-</div>
-</div>
-</footer>
-<!-- End footer -->
-</div>
-<script src=":headerFooterServer::/material-lite/material.min.js"></script>
-<script type="text/javascript">
-  function focusScroll() {
-    // Allow to move with PgUp/Down the main contain without having to focus manually
-    $("#main_content").trigger('focus');
-  }
-  function smoothScrollingTo(target) {
-    var nameValue = $.attr(target, 'href').substr(1)
-    // console.log(`Name value: ${nameValue}`);
-    $('.mdl-layout__content').animate({ scrollTop: $('[name="' + nameValue + '"]').offset().top }, 500);
-  }
-  $('a[href*=\\#]').on('click', function (event) {
-    event.preventDefault();
-    smoothScrollingTo(this);
-  });
 </script>
+
+<script>
+    window.gb = window.gb || {};
+    window.gb.locale = 'en';
+    
+    window.gb.urlPrefix = '';
+    window.gb.buildVersion = '1585166682129';
+
+</script>
+
+<script src="https://tanbif.ditnet.ac.tz/js/app.js"></script>
+
+<script src="https://tanbif.ditnet.ac.tz/js/environment.js?v=1585166682129"></script> 
+<script src="https://tanbif.ditnet.ac.tz/js/base/vendor.js?v=1585166682129"></script>
+<script src="https://tanbif.ditnet.ac.tz/js/base/custom.js?v=1585166682129"></script>
+
+<script src="https://tanbif.ditnet.ac.tz/js/base/pages/home.js?v=1585166682129"></script>
